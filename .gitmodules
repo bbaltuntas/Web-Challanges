@@ -1,0 +1,3 @@
+[submodule "time-tracking-dashboard-main-app"]
+	path = time-tracking-dashboard-main-app
+	url = https://github.com/bbaltuntas/Web-Challanges.git
