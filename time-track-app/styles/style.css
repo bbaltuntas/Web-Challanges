@@ -1,0 +1,331 @@
+
+body {
+
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;*/
+    background-color: hsl(226, 43%, 10%);
+    font-family: 'Rubik', sans-serif;
+
+}
+
+
+.flex-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+
+    /*  grid-template-columns: 1fr 3fr;*/
+    /* grid-template-columns: repeat(3, minmax(200px, 50%));*/
+
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(200px, auto);
+    color: #ffff;
+    min-width: 1000px;
+    margin: auto;
+
+}
+
+
+.one {
+    border-radius: 12px;
+    background-color: hsl(235, 46%, 20%);
+
+}
+
+.selected {
+    color: #ffff !important;
+}
+
+.one p {
+    margin-left: 30px;
+    color: hsl(236, 100%, 87%);
+}
+
+.time p:hover {
+    color: #ffff;
+}
+
+
+.person {
+    margin-bottom: 8%;
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 12px;
+    padding: 2rem;
+
+    font-size: 15px;
+
+
+}
+
+.image {
+    width: 30%;
+    border: 0.15rem white solid;
+    border-radius: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.one h5 {
+    margin: 10% auto 0;
+    font-weight: 500;
+    color: hsl(236, 100%, 87%);
+}
+
+.one h1 {
+    margin: 0 auto 10%;
+    font-weight: 300;
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(200px, auto);
+
+}
+
+.card {
+    background-color: red;
+    border-radius: 12px;
+    position: relative;
+    /*  perspective: 1000px;*/
+
+
+}
+
+.inner-card {
+    height: 125px;
+    position: relative;
+    bottom: -44px;
+    background-color: hsl(235, 46%, 20%);
+    padding: 1rem;
+    border-radius: 12px;
+
+}
+
+.inner-card:active {
+    background-color: hsl(235, 45%, 61%);
+}
+
+.inner-card p {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.inner-card h1 {
+    font-size: 2.25rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.inner-card h5 {
+    margin: 4% 0 0;
+    font-weight: 400;
+    color: hsl(236, 100%, 87%);
+}
+
+.inner-card img {
+    position: absolute;
+    right: 16px;
+    top: 34px;
+}
+
+.inner-card img:hover {
+    filter: brightness(1.5);
+}
+
+.card1 {
+    background-color: hsl(15, 100%, 70%);
+    background-image: url("../images/icon-work.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -10%;
+}
+
+
+.card2 {
+    background-color: hsl(195, 74%, 62%);
+    background-image: url("../images/icon-play.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -10%;
+}
+
+.card3 {
+    background-color: hsl(348, 100%, 68%);
+    background-image: url("../images/icon-study.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -10%;
+}
+
+.card4 {
+    background-color: hsl(145, 58%, 55%);
+    background-image: url("../images/icon-exercise.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -3%;
+}
+
+.card5 {
+    background-color: hsl(264, 64%, 52%);
+    background-image: url("../images/icon-social.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -10%;
+}
+
+.card6 {
+    background-color: hsl(43, 84%, 65%);
+    background-image: url("../images/icon-self-care.svg");
+    background-repeat: no-repeat;
+    background-position: 90% -10%;
+
+}
+
+/*Flip */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+/*!* Do an horizontal flip when you move the mouse over the flip box container *!
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}*/
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+    border-radius: 12px;
+    transform: rotateY(180deg);
+}
+
+.work .flip-card-back {
+    background-color: hsl(15, 100%, 70%);
+}
+
+.play .flip-card-back {
+    background-color: hsl(195, 74%, 62%);
+}
+
+.study .flip-card-back {
+    background-color: hsl(348, 100%, 68%);
+}
+
+.exercise .flip-card-back {
+    background-color: hsl(145, 58%, 55%);
+}
+
+.social .flip-card-back {
+    background-color: hsl(264, 64%, 52%);
+}
+
+.selfcare .flip-card-back {
+    background-color: hsl(43, 84%, 65%);
+}
+
+.flip-card-back h3 {
+    text-align: center;
+}
+
+.flip-card-back h3, .flip-card-back h4, .flip-card-back p {
+    margin: 2%;
+}
+
+/*MediaQueries*/
+@media (max-width: 1000px) and (min-width: 650px) {
+    .flex-container {
+        width: 95%;
+        min-width: auto;
+    }
+
+    .inner-card {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+    .flex-container {
+        grid-template-columns: 1fr;
+    }
+
+    .one p {
+        display: inline-block;
+
+    }
+
+    .two {
+        grid-template-columns: 1fr;
+    }
+
+    .flex-container {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        transform: translate(-50%, 50px);
+        min-width: 375px;
+    }
+
+    .person {
+        margin-bottom: 5%;
+        position: relative;
+        padding: 2rem 2rem 1rem;
+    }
+
+    .info {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        font-size: 90%;
+    }
+
+    .time {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats h5 {
+        margin: auto;
+        text-align: right;
+    }
+
+    .grid-stat {
+        padding: 3%;
+        grid-gap: 15%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-stat p {
+        text-align: end;
+    }
+}
